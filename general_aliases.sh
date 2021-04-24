@@ -1,24 +1,9 @@
-create_new_repo_github () {
-    echo 'creating new repo'
+alias example_alias='ls'
 
-    mkdir $1
-    cd $1
-
-    touch README.md
-    git init
-    git add README.md
-    git commit -m "first commit"
-    # git remote add origin git@github.com:brentlybazor/$1.git
-    # git push -u origin master
-    # todo: add options for private, public visiblity
-    # todo: what name should you use for the repo
-    gh repo create $1 --private -y
-
-
+example_alias_function () {
+    echo 'example echo'
 }
 
-
-lsTest () {
-    array=(*)
-    echo $array
+example_alias_function_with_args () {
+    echo This is an arg $1
 }
