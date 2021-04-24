@@ -15,10 +15,10 @@ if [[ "$unameOut" == *"MING"* ]]; then
 fi
 
 __source_files () {
-    for item in $@
+    for file in $@
     do
-        if [ ${item: -3} == ".sh" ]; then
-            source $item
+        if [[ $file == *.sh ]]; then
+            source $myDir/$file
         fi
     done
 }
