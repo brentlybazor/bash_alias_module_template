@@ -17,12 +17,10 @@ fi
 __source_files () {
     for item in $@
     do
-    #   test $myDir/$item && source $myDir/$item
-    local FILE=$myDir/$item
-    if test -f "$FILE"; then
-        source $FILE
-    fi
+        if [ ${item: -3} == ".sh" ]; then
+            source $item
+        fi
     done
 }
 
-__source_files (*).sh
+__source_files *
