@@ -18,9 +18,9 @@ __source_files () {
     for file in $@
     do
         if [[ $file == *.sh ]]; then
-            source $myDir/$file
+            source $file
         fi
     done
 }
 
-__source_files *
+__source_files $myDir/*
