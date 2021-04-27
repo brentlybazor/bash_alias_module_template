@@ -14,6 +14,9 @@ if [[ "$unameOut" == *"MING"* ]]; then
     myDir="${BASH_SOURCE%/*}"
 fi
 
+source $myDir/variables.sh
+source $myDir/local.variables.sh
+
 __source_files () {
     for file in $@
     do
