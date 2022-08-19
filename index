@@ -1,5 +1,3 @@
-# cd ~
-
 # check the OS 
 
 unameOut="$(uname -s)"
@@ -18,9 +16,11 @@ if [[ "$unameOut" == *"MING"* ]]; then
     myDir="${BASH_SOURCE%/*}"
 fi
 
-source $myDir/variables.sh
-# source $myDir/local.variables.sh
+# add the variables to the system
+[[ -f $myDir/variables.sh ]] && source $myDir/variables.sh
+[[ -f $myDir/local.variables.sh ]] && source $myDir/local.variables.sh
 
+# source all the found .sh file automatically
 __source_files () {
     for file in $@
     do
