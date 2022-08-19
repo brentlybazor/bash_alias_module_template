@@ -8,7 +8,7 @@ There are 2 types of aliases that can be created in this template. (examples in 
 ## Setup
 1. Download the files into a directory on your local machine.
 2. If you need to add secret variables to your template (like a private key or token), create a `local.variables.sh` file.
-3. Inside the variables files (`local.variables.sh` or `variables.sh`) add any variable that can be used by your system. (Variables can be used to save a file or folder path for use in the aliases.)
+3. Inside the variables files (`local.variables.sh` or `variables.sh`) add any variable that can be used by your system. (Variables can be used to save a file or folder path for use in the aliases.) (You will need to uncomment the `source $myDir/local.variables.sh` line in `index.sh` to load in the local variables after the `local.variables.sh` file is created.)
 
 
 ## Adding New Aliases
@@ -21,3 +21,5 @@ There are 2 types of aliases that can be created in this template. (examples in 
 - Another way to do this is to create a source alias function (`"custom-source = source [insert template path]/index.sh"`)
 - If you want to truly customize this for your who machine, edit `~/.bashrc` (or `~/.zshrc` on Mac/Linux is zsh is used) and add `"mysource = source [insert template path]/index.sh"` (or your prefered alias name) so that it can update all of your aliases.
 - All variable inside `local.variables.sh` will override the variables inside `variables.sh
+- For the `git_aliases.sh`, replace `[prefix]` with the short prefix you want to use instead.
+- There is also a check now on the `git checkout` commands that will see if the branch exists or ask you to create the branch without passing extra variables.

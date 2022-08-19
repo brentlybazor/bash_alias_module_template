@@ -15,7 +15,7 @@ if [[ "$unameOut" == *"MING"* ]]; then
 fi
 
 source $myDir/variables.sh
-source $myDir/local.variables.sh
+# source $myDir/local.variables.sh
 
 __source_files () {
     for file in $@
