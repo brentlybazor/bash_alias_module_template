@@ -11,7 +11,11 @@ fi
 
 # OS is Windows
 if [[ "$unameOut" == *"MING"* ]]; then
-    myDir="${BASH_SOURCE%/*}"
+    if [[ $(uname -m) == "arm64" ]]; then
+        myDir="${BASH_SOURCE%/*}"
+    else
+        myDir=$(dirname $0)
+    fi
 fi
 
 source $myDir/variables.sh
